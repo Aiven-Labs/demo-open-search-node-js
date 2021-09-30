@@ -25,6 +25,11 @@ You're all set! Retrieve the list of available indices by running
     run-func index.js getExistingIndices
 
 
+License
+-------
+
+This work is licensed under a
+`Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
 
 
 
