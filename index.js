@@ -106,7 +106,7 @@ module.exports.termSearch = (field, value) => {
 };
 
 /**
- * Searching for exact matches of a value in a field.
+ * Searching for a range of values in a field.
  */
 module.exports.rangeSearch = (field, gte, lte) => {
   console.log(
