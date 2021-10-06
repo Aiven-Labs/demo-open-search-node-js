@@ -1,7 +1,7 @@
-Aiven Developer
-===============
+Demo of OpenSearch with NodeJS
+==============================
 
-This repository contains code examples from the tutorial on `how to use OpenSearch with NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/get-started-with-nodejs.html#query-the-data>`_.
+This repository contains code examples from the tutorial on `how to use OpenSearch with NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/get-started-with-nodejs.html>`_.
 
 Running locally
 ---------------
@@ -28,8 +28,7 @@ You're all set! Retrieve the list of available indices by running
 License
 -------
 
-This work is licensed under a
-`Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
+This work is licensed under the Apache License, Version 2.0. Full license text is available in the LICENSE file and at http://www.apache.org/licenses/LICENSE-2.0.txt
 
 
 
