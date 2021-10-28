@@ -1,39 +1,6 @@
-require("dotenv").config();
-const { Client } = require("@opensearch-project/opensearch");
+const { client, indexName, recipes } = require("./config");
 
-// full_format_recipes.json taken from
-// https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json
-const recipes = require("./full_format_recipes.json");
-
-const client = new Client({
-  node: process.env.SERVICE_URI,
-});
-
-const indexName = "recipes";
-
-/**
- * Logging result body, used in callbacks.
- */
-const logBody = (error, result) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(result.body);
-  }
-};
-
-/**
- * Parsing and logging list of titles from the result, used in callbacks.
- */
-const logTitles = (error, result) => {
-  if (error) {
-    console.error(error);
-  } else {
-    const hits = result.body.hits.hits;
-    console.log(`Number of returned results is ${hits.length}`);
-    console.log(hits.map((hit) => hit._source.title));
-  }
-};
+const { logBody, logTitles } = require("./helpers");
 
 /**
  * Getting existing indices in the cluster.
