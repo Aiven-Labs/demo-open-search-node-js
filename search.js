@@ -1,55 +1,6 @@
-const { client, indexName, recipes } = require("./config");
-const { logBody, logTitles } = require("./helpers");
+const { client, indexName } = require("./config");
 
-/**
- * Getting existing indices in the cluster.
- */
-module.exports.getExistingIndices = () => {
-  console.log(`Getting existing indices:`);
-  client.cat.indices({ format: "json" }, logBody);
-};
-
-/**
- * Indexing data from json file with recipes.
- * run-func index indexData
- */
-module.exports.indexData = () => {
-  console.log(`Ingesting data: ${recipes.length} recipes`);
-  const body = recipes.flatMap((doc) => [
-    { index: { _index: indexName } },
-    doc,
-  ]);
-
-  client.bulk({ refresh: true, body }, logBody);
-};
-
-/**
- * Retrieving mapping for the index.
- * run-func index getMapping
- */
-module.exports.getMapping = () => {
-  console.log(`Retrieving mapping for the index with name ${indexName}`);
-
-  client.indices.getMapping({ index: indexName }, (error, result) => {
-    if (error) {
-      console.error(error);
-    } else {
-      console.log(result.body.recipes.mappings.properties);
-    }
-  });
-};
-
-/**
- * Deleting the index
- */
-module.exports.deleteIndex = () => {
-  client.indices.delete(
-      {
-        index: indexName,
-      },
-      logBody
-  );
-};
+const { logTitles } = require("./helpers");
 
 /**
  * Example of using the Lucene query string syntax
@@ -66,8 +17,9 @@ module.exports.qSearch = () => {
 
 /**
  * Searching for exact matches of a value in a field.
+ * run-func search term sodium 0
  */
-module.exports.termSearch = (field, value) => {
+module.exports.term = (field, value) => {
   console.log(`Searching for values in the field ${field} equal to ${value}`);
   const body = {
     query: {
@@ -87,8 +39,9 @@ module.exports.termSearch = (field, value) => {
 
 /**
  * Searching for a range of values in a field.
+ * run-func search range sodium 0 10
  */
-module.exports.rangeSearch = (field, gte, lte) => {
+module.exports.range = (field, gte, lte) => {
   console.log(
     `Searching for values in the ${field} ranging from ${gte} to ${lte}`
   );
@@ -113,8 +66,9 @@ module.exports.rangeSearch = (field, gte, lte) => {
 
 /**
  * Specifying fuzziness to account for typos and misspelling.
+ * run-func search fuzzy title pinapple 2
  */
-module.exports.fuzzySearch = (field, value, fuzziness) => {
+module.exports.fuzzy = (field, value, fuzziness) => {
   console.log(
     `Search for ${value} in the ${field} with fuzziness set to ${fuzziness}`
   );
@@ -139,8 +93,9 @@ module.exports.fuzzySearch = (field, value, fuzziness) => {
 
 /**
  * Finding matches sorted by relevance.
+ * run-func search match title 'Tomato-garlic soup with dill'
  */
-module.exports.matchSearch = (field, query) => {
+module.exports.match = (field, query) => {
   console.log(`Searching for ${query} in the field ${field}`);
   const body = {
     query: {
@@ -162,8 +117,9 @@ module.exports.matchSearch = (field, query) => {
 
 /**
  * Specifying a slop - a distance between search words.
+ * run-func search slop directions "pizza pineapple" 10
  */
-module.exports.slopSearch = (field, query, slop) => {
+module.exports.slop = (field, query, slop) => {
   console.log(
     `Searching for ${query} with slop value ${slop} in the field ${field}`
   );
@@ -188,8 +144,9 @@ module.exports.slopSearch = (field, query, slop) => {
 
 /**
  * Using special operators within a query string and a size parameter.
+ * run-func search query ingredients "(salmon|tuna) +tomato -onion" 100
  */
-module.exports.querySearch = (field, query, size) => {
+module.exports.query = (field, query, size) => {
   console.log(
     `Searching for ${query} in the field ${field} and returning maximum ${size} results`
   );
@@ -213,8 +170,9 @@ module.exports.querySearch = (field, query, size) => {
 
 /**
  * Combining several queries together
+ * run-func search boolean
  */
-module.exports.booleanSearch = () => {
+module.exports.boolean = () => {
   console.log(
     `Searching for quick and easy recipes without garlic with low sodium and high protein`
   );

@@ -1,4 +1,5 @@
 const { client, indexName: index } = require("./config");
+const { logAggs } = require("./helpers");
 
 /**
  * Calculate average rating of all documents
@@ -32,13 +33,7 @@ module.exports.averageRating = () => {
   );
 };
 
-const logAggs = (field, error, result) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(result.body.aggregations[field]);
-  }
-};
+
 
 /**
  * Get metric aggregations for the field
