@@ -1,10 +1,7 @@
-Demo of OpenSearch with NodeJS
-==============================
-
-This repository contains code examples from articles `how to write search queries with OpenSearch and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/get-started-with-nodejs.html>`_ and `how to use aggregations with OpenSearch and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-aggregations-and-nodejs.html>`_.
-
 Hands-on material for session on how to start working with OpenSearch and NodeJS
 ================================================================================
+
+This repository contains code examples from articles `how to write search queries with OpenSearch and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/get-started-with-nodejs.html>`_ and `how to use aggregations with OpenSearch and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-aggregations-and-nodejs.html>`_.
 
 Prerequisites
 -------------
