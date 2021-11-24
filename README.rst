@@ -1,7 +1,18 @@
 Demo of OpenSearch with NodeJS
 ==============================
 
-This repository contains code examples from the tutorial on `how to use OpenSearch with NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/get-started-with-nodejs.html>`_.
+This repository contains code examples from articles `how to write search queries with OpenSearch and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/get-started-with-nodejs.html>`_ and `how to use aggregations with OpenSearch and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-aggregations-and-nodejs.html>`_.
+
+Hands-on material for session on how to start working with OpenSearch and NodeJS
+================================================================================
+
+Prerequisites
+-------------
+
+To run examples from this repository you'll need:
+
+1. An OpenSearch cluster. You can `set it up manually <https://opensearch.org/downloads.html>`_ or you can use a fully managed service, such as `Aiven for OpenSearch <https://aiven.io/opensearch>`_.
+2. NodeJS and npm. If you don’t have NodeJS or npm installed, follow `these instructions <https://docs.npmjs.com/downloading-and-installing-node-js-and-npm>`_.
 
 Running locally
 ---------------
@@ -18,11 +29,43 @@ Running locally
 
     npm i -g run-func
 
-You're all set! Retrieve the list of available indices by running
+You're all set! Retrieve the list of available indices by running in your terminal
 
 ::
 
-    run-func index.js getExistingIndices
+    run-func search getIndices
+
+
+How to use
+----------
+
+1. Make sure that you have `full_format_recipes.json` at the root level of the repository and run command to inject data::
+
+    run-func index injectData
+
+Wait till the data is indexed. Can take 15-20 seconds.
+
+2. Check `search.js` and `aggregate.js` for examples you can run. Every method contains a terminal command sample that you can try.
+
+::
+
+    run-func search match title "garlic onion cake"
+
+::
+
+    run-func aggregate field rating
+
+
+Structure of this repository
+----------------------------
+
+`index.js` - working with index, injecting data
+
+`search.js` - examples of different types of search queries
+
+`aggregate.js` - examples of different types of aggregation queries
+
+`config.js` and `helpers.js` contain operations required to connect to the cluster and log responses.
 
 
 License
