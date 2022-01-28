@@ -1,14 +1,14 @@
-Hands-on material for session on how to start working with OpenSearch and NodeJS
+Hands-on material for session on how to start working with OpenSearch® and NodeJS
 ================================================================================
 
-This repository contains code examples from articles `how to write search queries with OpenSearch and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html>`_ and `how to use aggregations with OpenSearch and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-aggregations-and-nodejs.html>`_.
+This repository contains code examples from articles `how to write search queries with OpenSearch® and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html>`_ and `how to use aggregations with OpenSearch and NodeJS <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-aggregations-and-nodejs.html>`_.
 
 Prerequisites
 -------------
 
 To run examples from this repository you'll need:
 
-1. An OpenSearch cluster. You can `set it up manually <https://opensearch.org/downloads.html>`_ or you can use a fully managed service, such as `Aiven for OpenSearch <https://aiven.io/opensearch>`_.
+1. An OpenSearch® cluster. You can `set it up manually <https://opensearch.org/downloads.html>`_ or you can use a fully managed service, such as `Aiven for OpenSearch <https://aiven.io/opensearch>`_.
 2. NodeJS and npm. If you don’t have NodeJS or npm installed, follow `these instructions <https://docs.npmjs.com/downloading-and-installing-node-js-and-npm>`_.
 
 Running locally
@@ -71,6 +71,7 @@ License
 This work is licensed under the Apache License, Version 2.0. Full license text is available in the LICENSE file and at http://www.apache.org/licenses/LICENSE-2.0.txt
 
 
+Trademarks
+----------
 
-
-
+OpenSearch, NodeJs and npm are trademarks and property of their respective owners. All product and service names used in this website are for identification purposes only and do not imply endorsement.
