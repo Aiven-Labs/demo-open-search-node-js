@@ -30,15 +30,15 @@ You're all set! Retrieve the list of available indices by running in your termin
 
 ::
 
-    run-func search getIndices
+    run-func index.js getExistingIndices
 
 
 How to use
 ----------
 
-1. Make sure that you have `full_format_recipes.json` at the root level of the repository and run command to inject data::
+1. Make sure that you have `full_format_recipes.json` at the root level of the repository and run command to index data:
 
-    run-func index injectData
+    run-func index.js indexData
 
 Wait till the data is indexed. Can take 15-20 seconds.
 
@@ -46,11 +46,11 @@ Wait till the data is indexed. Can take 15-20 seconds.
 
 ::
 
-    run-func search match title "garlic onion cake"
+    run-func search.js match title "garlic onion cake"
 
 ::
 
-    run-func aggregate field rating
+    run-func aggregate.js field averageRating
 
 
 Structure of this repository
