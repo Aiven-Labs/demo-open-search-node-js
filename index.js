@@ -11,7 +11,7 @@ module.exports.getExistingIndices = () => {
 
 /**
  * Indexing data from json file with recipes.
- * run-func index indexData
+ * run-func index.js indexData
  */
 module.exports.indexData = () => {
   console.log(`Ingesting data: ${recipes.length} recipes`);
@@ -25,7 +25,7 @@ module.exports.indexData = () => {
 
 /**
  * Retrieving mapping for the index.
- * run-func index getMapping
+ * run-func index.js getMapping
  */
 module.exports.getMapping = () => {
   console.log(`Retrieving mapping for the index with name ${indexName}`);

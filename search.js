@@ -17,7 +17,7 @@ module.exports.qSearch = () => {
 
 /**
  * Searching for exact matches of a value in a field.
- * run-func search term sodium 0
+ * run-func search.js term sodium 0
  */
 module.exports.term = (field, value) => {
   console.log(`Searching for values in the field ${field} equal to ${value}`);
@@ -39,7 +39,7 @@ module.exports.term = (field, value) => {
 
 /**
  * Searching for a range of values in a field.
- * run-func search range sodium 0 10
+ * run-func search.js range sodium 0 10
  */
 module.exports.range = (field, gte, lte) => {
   console.log(
@@ -66,7 +66,7 @@ module.exports.range = (field, gte, lte) => {
 
 /**
  * Specifying fuzziness to account for typos and misspelling.
- * run-func search fuzzy title pinapple 2
+ * run-func search.js fuzzy title pinapple 2
  */
 module.exports.fuzzy = (field, value, fuzziness) => {
   console.log(
@@ -93,7 +93,7 @@ module.exports.fuzzy = (field, value, fuzziness) => {
 
 /**
  * Finding matches sorted by relevance.
- * run-func search match title 'Tomato-garlic soup with dill'
+ * run-func search.js match title 'Tomato-garlic soup with dill'
  */
 module.exports.match = (field, query) => {
   console.log(`Searching for ${query} in the field ${field}`);
@@ -117,7 +117,7 @@ module.exports.match = (field, query) => {
 
 /**
  * Specifying a slop - a distance between search words.
- * run-func search slop directions "pizza pineapple" 10
+ * run-func search.js slop directions "pizza pineapple" 10
  */
 module.exports.slop = (field, query, slop) => {
   console.log(
@@ -144,7 +144,7 @@ module.exports.slop = (field, query, slop) => {
 
 /**
  * Using special operators within a query string and a size parameter.
- * run-func search query ingredients "(salmon|tuna) +tomato -onion" 100
+ * run-func search.js query ingredients "(salmon|tuna) +tomato -onion" 100
  */
 module.exports.query = (field, query, size) => {
   console.log(
@@ -170,7 +170,7 @@ module.exports.query = (field, query, size) => {
 
 /**
  * Combining several queries together
- * run-func search boolean
+ * run-func search.js boolean
  */
 module.exports.boolean = () => {
   console.log(
