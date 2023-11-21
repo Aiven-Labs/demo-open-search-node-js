@@ -3,7 +3,7 @@ const { logAggs } = require("./helpers");
 
 /**
  * Calculate average rating of all documents
- * run-func aggregate averageRating
+ * run-func aggregate.js averageRating
  */
 module.exports.averageRating = () => {
   client.search(
@@ -38,7 +38,7 @@ module.exports.averageRating = () => {
 /**
  * Get metric aggregations for the field
  * Examples: avg, min, max, stats, extended_stats, percentiles, terms
- * run-func aggregate metric avg rating
+ * run-func aggregate.js metric avg rating
  */
 module.exports.metric = (metric, field) => {
   const body = {
@@ -64,7 +64,7 @@ module.exports.metric = (metric, field) => {
 
 /**
  * Group recipes into bucket based on sodium levels
- * run-func aggregate sodiumRange
+ * run-func aggregate.js sodiumRange
  */
 module.exports.sodiumRange = () => {
   client.search(
@@ -102,7 +102,7 @@ module.exports.sodiumRange = () => {
 
 /**
  * Group recipes into bucket based on the provided field and set of ranges
- * run-func aggregate range sodium 500 1000
+ * run-func aggregate.js range sodium 500 1000
  */
 module.exports.range = (field, ...values) => {
   // map values to list of ranges in format 'from X'/'to Y'
@@ -137,7 +137,7 @@ module.exports.range = (field, ...values) => {
 
 /**
  * Group recipes into buckets for every unique value
- * `run-func aggregate terms categories.keyword 20`
+ * `run-func aggregate.js terms categories.keyword 20`
  */
 module.exports.terms = (field, size) => {
   const body = {
@@ -163,7 +163,7 @@ module.exports.terms = (field, size) => {
 
 /**
  * Group recipes into buckets to find the most rare items
- * `run-func aggregate rareTerms categories.keyword 3`
+ * `run-func aggregate.js rareTerms categories.keyword 3`
  */
 module.exports.rareTerms = (field, max) => {
   const body = {
@@ -188,7 +188,7 @@ module.exports.rareTerms = (field, max) => {
 
 /**
  * Date histogram with a time interval
- * `run-func aggregate dateHistogram date year`
+ * `run-func aggregate.js dateHistogram date year`
  */
 module.exports.dateHistogram = (field, interval) => {
   const body = {
@@ -214,7 +214,7 @@ module.exports.dateHistogram = (field, interval) => {
 
 /**
  * Calculating the moving average of number of added recipes across years
- * `run-func aggregate movingAverage`
+ * `run-func aggregate.js movingAverage`
  */
 module.exports.movingAverage = () => {
   const body = {
